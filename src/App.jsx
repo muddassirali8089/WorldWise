@@ -1,10 +1,9 @@
 import React from 'react'
-
-const x =10;
+import Homepage from './pages/Homepage'
 
 function App() {
   return (
-    <div>App</div>
+    
   )
 }
 
