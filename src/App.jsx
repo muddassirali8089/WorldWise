@@ -44,7 +44,9 @@ function App() {
         <Route path="/app" element={<AppLayout />}>
           <Route index element={<CityList cities={cities} isLoading={loading} />} />
           <Route path="cities" element={<CityList  cities={cities} isLoading={loading}/>} />
-          <Route path="cities/:idx" element={<City/>} />
+          <Route path="cities/:id" element={<City/>} />
+          // here is the id variable that store the data what ever we pass when we call this route 
+          // to get the data using useparams an destructure the obj by using this nane 
           <Route path="countries" element={<CountryList  cities={cities} isLoading={loading}/>} />
           <Route path="form" element={<p> Form</p>} />
         </Route>
