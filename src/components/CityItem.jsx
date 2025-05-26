@@ -2,6 +2,7 @@
 import React from "react";
 import ReactCountryFlag from "react-country-flag";
 import styles from "./CityItem.module.css";
+import { Link } from "react-router-dom";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -11,7 +12,7 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
-  const { cityName, country, date } = city;
+  const { cityName, country, date , id } = city;
 
   // Map country names to ISO country codes
   const countryCode = {
@@ -24,7 +25,10 @@ function CityItem({ city }) {
   }[country];
 
   return (
-    <li className={styles.cityItem}>
+    <li >
+
+      <Link to={`${id}`} className={styles.cityItem}>
+
       <span className={styles.emoji}>
         <ReactCountryFlag 
           countryCode={countryCode}
@@ -39,6 +43,7 @@ function CityItem({ city }) {
       <h3 className={styles.cityName}>{cityName}</h3>
       <time className={styles.date}>{formatDate(date)}</time>
       <button className={styles.deleteBtn}>&times;</button>
+            </Link>
     </li>
   );
 }

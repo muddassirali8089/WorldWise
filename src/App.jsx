@@ -9,6 +9,7 @@ import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList.jsx"
+import City from "./components/City.jsx";
 
 const BASE_URL = "http://localhost:8000";
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/app" element={<AppLayout />}>
           <Route index element={<CityList cities={cities} isLoading={loading} />} />
           <Route path="cities" element={<CityList  cities={cities} isLoading={loading}/>} />
+          <Route path="cities/:idx" element={<City/>} />
           <Route path="countries" element={<CountryList  cities={cities} isLoading={loading}/>} />
           <Route path="form" element={<p> Form</p>} />
         </Route>
