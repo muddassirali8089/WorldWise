@@ -12,7 +12,7 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
-  const { cityName, country, date , id } = city;
+  const { cityName, country, date , id  , position } = city;
 
   // Map country names to ISO country codes
   const countryCode = {
@@ -27,7 +27,7 @@ function CityItem({ city }) {
   return (
     <li >
 
-      <Link to={`${id}`} className={styles.cityItem}>
+      <Link to={`${id}?lat=${position.lat}&lng=${position.lng}`} className={styles.cityItem}>
 
       <span className={styles.emoji}>
         <ReactCountryFlag 
