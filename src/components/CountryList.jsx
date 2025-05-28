@@ -27,7 +27,7 @@ if(!countries.length) return <Message message = "Add your first country by click
     <ul className={styles.countryList}>
    
       {countries.map((country) => (
-        <CountryItem  country={country} />
+        <CountryItem  key={country.country} country={country}  />
       ))}
     </ul>
   );

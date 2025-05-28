@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
@@ -44,7 +44,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/app" element={<AppLayout />}>
-          <Route index element={<CityList cities={cities} isLoading={loading} />} />
+          <Route index element={<Navigate replace to="cities"/>} />
           <Route path="cities" element={<CityList  cities={cities} isLoading={loading}/>} />
           <Route path="cities/:id" element={<City/>} />
           // here is the id variable that store the data what ever we pass when we call this route 
