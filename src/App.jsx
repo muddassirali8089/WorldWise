@@ -10,8 +10,10 @@ import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList.jsx"
 import City from "./components/City.jsx";
+import Form from "./components/Form.jsx"
 
 const BASE_URL = "http://localhost:8000";
+
 function App() {
   const [cities, setCities] = useState([]);
   // const [countries , setCountries] = useState([]);
@@ -48,7 +50,7 @@ function App() {
           // here is the id variable that store the data what ever we pass when we call this route 
           // to get the data using useparams an destructure the obj by using this nane 
           <Route path="countries" element={<CountryList  cities={cities} isLoading={loading}/>} />
-          <Route path="form" element={<p> Form</p>} />
+          <Route path="form" element={<Form/>} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
         {/* Add more routes here as needed */}
