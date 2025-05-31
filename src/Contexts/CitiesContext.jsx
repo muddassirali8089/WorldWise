@@ -1,4 +1,5 @@
-import { useState, useEffect, createContext } from "react";
+// CitiesContext.jsx
+import { useState, useEffect, createContext, useContext } from "react";
 
 const CitiesContext = createContext();
 
@@ -6,18 +7,21 @@ const BASE_URL = "http://localhost:8000";
 
 function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
-  // const [countries , setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null); // Added error state
 
-  useEffect(function () {
+  useEffect(() => {
     async function fetchCities() {
       try {
         setLoading(true);
         const res = await fetch(`${BASE_URL}/cities`);
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
         const data = await res.json();
         setCities(data);
       } catch (err) {
-        alert(err);
+        setError(err.message); // Set error message
       } finally {
         setLoading(false);
       }
@@ -26,15 +30,20 @@ function CitiesProvider({ children }) {
   }, []);
 
   return (
-    <CitiesContext.Provider
-      value={{
-        cities: cities,
-        loading: loading,
-      }}
-    >
+    <CitiesContext.Provider value={{ cities, loading, error }}>
       {children}
     </CitiesContext.Provider>
   );
 }
 
-export { CitiesContext };
+function useCities() {
+  const context = useContext(CitiesContext);
+  if (context === undefined) {
+    throw new Error("useCities must be used within a CitiesProvider");
+  }
+  return context;
+}
+
+// eslint-disable-next-line react-refresh/only-export-components
+export { CitiesProvider, useCities };
+

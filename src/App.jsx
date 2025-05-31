@@ -14,15 +14,16 @@ import Form from "./components/Form.jsx"
 
 
 import "./index.css"
-import { CitiesContext } from "./Contexts/CitiesContext.jsx";
+import { CitiesProvider } from "./Contexts/CitiesContext.jsx";
+
+
 
 function App() {
   
 
   return (
-    <CitiesContext>
+    <CitiesProvider>
 
-   
     <BrowserRouter>
       <Routes>
         <Route index element={<Homepage />} />
@@ -43,7 +44,7 @@ function App() {
         {/* Add more routes here as needed */}
       </Routes>
     </BrowserRouter>
-     </CitiesContext>
+     </CitiesProvider>
   );
 }
 
