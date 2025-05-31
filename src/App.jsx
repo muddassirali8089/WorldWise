@@ -23,7 +23,6 @@ function App() {
 
   return (
     <CitiesProvider>
-
     <BrowserRouter>
       <Routes>
         <Route index element={<Homepage />} />

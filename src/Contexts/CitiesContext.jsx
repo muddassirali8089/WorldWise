@@ -9,16 +9,20 @@ function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null); // Added error state
+  const [currentCity , setCurrentCity] = useState({});
 
   useEffect(() => {
     async function fetchCities() {
       try {
         setLoading(true);
         const res = await fetch(`${BASE_URL}/cities`);
+     
+        
         if (!res.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await res.json();
+        
         setCities(data);
       } catch (err) {
         setError(err.message); // Set error message
@@ -29,8 +33,37 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
+
+
+
+
+
+    async function getCity(id) {
+      try {
+        setLoading(true);
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await res.json();
+        setCurrentCity(data);
+      } catch (err) {
+        setError(err.message); // Set error message
+      } finally {
+        setLoading(false);
+      }
+    }
+  
+
+   
+
+
+
+
+
+
   return (
-    <CitiesContext.Provider value={{ cities, loading, error }}>
+    <CitiesContext.Provider value={{ cities, loading, error , currentCity , getCity }}>
       {children}
     </CitiesContext.Provider>
   );
