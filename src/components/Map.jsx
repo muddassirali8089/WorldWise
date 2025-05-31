@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Map.module.css';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams,  } from 'react-router-dom';
+import { MapContainer, Marker, Popup, TileLayer  } from 'react-leaflet';
 
 function Map() {
+
+
+  const [mapPosition , setMapPosition] = useState([40, 0])
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  // const lat = searchParams.get("lat");
+  // const lng = searchParams.get("lng");
 
   return (
     <div className={styles.mapContainer} onClick={() => navigate("form")}>
-      Map<br />
-      Position: {lat}, {lng}
-      <br />
+     
+
+
+     <MapContainer className={styles.map} center={mapPosition} zoom={13} scrollWheelZoom={true}>
+    <TileLayer
+      attribution='&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors'
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    />
+    <Marker position={mapPosition}>
+      <Popup>
+        A pretty CSS3 popup. <br /> Easily customizable.
+      </Popup>
+    </Marker>
+  </MapContainer>
+
       <button onClick={() => setSearchParams({ lat: 123, lng: "fghjk" })}>
         Get Location
       </button>
