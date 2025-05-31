@@ -3,6 +3,7 @@ import React from "react";
 import ReactCountryFlag from "react-country-flag";
 import styles from "./CityItem.module.css";
 import { Link } from "react-router-dom";
+import { useCities } from "../Contexts/CitiesContext";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -23,11 +24,12 @@ function CityItem({ city }) {
     Italy: 'IT'
     // Add more countries as needed
   }[country];
-
+  const {currentCity} = useCities()
   return (
     <li >
 
-      <Link to={`${id}?lat=${position.lat}&lng=${position.lng}`} className={styles.cityItem}>
+      <Link to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+       className={`${styles.cityItem} ${currentCity.id === id ? styles['cityItem--active'] : ""}`}>
 
       <span className={styles.emoji}>
         <ReactCountryFlag 
