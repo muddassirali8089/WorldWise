@@ -4,13 +4,15 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { useCities } from "../Contexts/CitiesContext";
 import ReactCountryFlag from "react-country-flag";
+import { useGeolocation } from "../CustomHooks/useGeoLocation";
+import Button from "./Button";
 
 function Map() {
-  const navigate = useNavigate();
+
+   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const { cities } = useCities(); // Removed `country` – we now use per-city
-
+  const {isLoading: isLoadingPosition , position:geolocationPosition , getPosition} = useGeolocation()
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
   // Map from country names to ISO codes
@@ -29,8 +31,17 @@ function Map() {
     },
     [mapLat, mapLng]
   );
+
+  useEffect(function(){
+      if(geolocationPosition){
+        setMapPosition([geolocationPosition.lat , geolocationPosition.lng])
+      }
+  } , [geolocationPosition])
   return (
     <div className={styles.mapContainer} onClick={() => navigate("form")}>
+      <Button type="position" onClick={getPosition}>{
+        isLoadingPosition ? "Loading.." : "USE YOUR POSITION"
+        }</Button>
       <MapContainer
         className={styles.map}
         center={mapPosition}
@@ -76,9 +87,7 @@ function Map() {
         <DetectClick/>
       </MapContainer>
 
-      <button onClick={() => setSearchParams({ lat: 123, lng: 456789 })}>
-        Get Location
-      </button>
+    
     </div>
   );
 }
