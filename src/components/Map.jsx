@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Map.module.css";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { useCities } from "../Contexts/CitiesContext";
 import ReactCountryFlag from "react-country-flag";
 import { useGeolocation } from "../CustomHooks/useGeoLocation";
+
 import Button from "./Button";
+import { useUrlPosition } from "../CustomHooks/useUrlPosition";
 
 function Map() {
 
    const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
-  const [searchParams, setSearchParams] = useSearchParams();
+    const {mapLat , mapLng} = useUrlPosition()
   const {isLoading: isLoadingPosition , position:geolocationPosition , getPosition} = useGeolocation()
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
+ 
   // Map from country names to ISO codes
   const countryCode = {
     Portugal: "PT",
