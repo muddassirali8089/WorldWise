@@ -1,25 +1,19 @@
 import React from "react";
 import ReactCountryFlag from "react-country-flag";
 import styles from "./CountryItem.module.css";
-
+import countryCode from "../CustomHooks/countryCode.js"
 function CountryItem({ country }) {
   // Get ISO country code from country name
-  const countryCodeMap = {
-    Portugal: 'PT',
-    Spain: 'ES',
-    Germany: 'DE',
-    France: 'FR',
-    Italy: 'IT',
-    // Add more countries as needed
-  };
 
-  const countryCode = countryCodeMap[country.country];
+
+
+  const countryCode1 = countryCode[country.country];
 
   return (
     <li className={styles.countryItem}>
       <span>
         <ReactCountryFlag
-          countryCode={countryCode}
+          countryCode={countryCode1}
           svg
           style={{
             width: '1em',

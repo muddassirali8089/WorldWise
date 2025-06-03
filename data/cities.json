@@ -35,7 +35,42 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Karachi",
+      "country": "Pakistan",
+      "emoji": "🇵🇰",
+      "date": "2027-06-20T12:00:00.000Z",
+      "notes": "Visited for work and loved the city vibe!",
+      "position": {
+        "lat": 24.8607,
+        "lng": 67.0011
+      },
+      "id": 12345678
+    },
+    {
+      "cityName": "Mumbai",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2027-08-15T10:30:00.000Z",
+      "notes": "Amazing food and culture!",
+      "position": {
+        "lat": 19.076,
+        "lng": 72.8777
+      },
+      "id": 87654321
+    },
+     {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": 984437
     }
-    
   ]
 }

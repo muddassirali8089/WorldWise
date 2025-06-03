@@ -16,8 +16,6 @@ function CitiesProvider({ children }) {
       try {
         setLoading(true);
         const res = await fetch(`${BASE_URL}/cities`);
-     
-        
         if (!res.ok) {
           throw new Error('Network response was not ok');
         }
@@ -32,9 +30,6 @@ function CitiesProvider({ children }) {
     }
     fetchCities();
   }, []);
-
-
-
 
 
 
