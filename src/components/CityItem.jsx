@@ -4,6 +4,7 @@ import styles from "./CityItem.module.css";
 import { Link } from "react-router-dom";
 import { useCities } from "../Contexts/CitiesContext";
 import countryCodeMap from "../CustomHooks/CountryCode"; // renamed for clarity
+import Spinner from "./Spinner";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -17,8 +18,13 @@ function CityItem({ city }) {
 
   const code = countryCodeMap[country?.trim()] || "";
 
-  const { currentCity } = useCities();
+  const { currentCity , deleteCity } = useCities();
 
+  function handleClick(e){
+    e.preventDefault();
+    deleteCity(id)
+  }
+ 
   return (
     <li>
       <Link
@@ -46,7 +52,7 @@ function CityItem({ city }) {
         </span>
         <h3 className={styles.cityName}>{cityName}</h3>
         <time className={styles.date}>{formatDate(date)}</time>
-        <button className={styles.deleteBtn}>&times;</button>
+        <button className={styles.deleteBtn}  onClick={handleClick}>&times;</button>
       </Link>
     </li>
   );
