@@ -22,7 +22,7 @@ function CityItem({ city }) {
     Germany: 'DE',
     France: 'FR',
     Italy: 'IT'
-    // Add more countries as needed
+    
   }[country];
   const {currentCity} = useCities()
   return (

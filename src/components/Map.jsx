@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Map.module.css";
 import { useNavigate } from "react-router-dom";
+
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { useCities } from "../Contexts/CitiesContext";
 import ReactCountryFlag from "react-country-flag";
@@ -14,6 +15,7 @@ function Map() {
    const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
     const {mapLat , mapLng} = useUrlPosition()
+    
   const {isLoading: isLoadingPosition , position:geolocationPosition , getPosition} = useGeolocation()
  
   // Map from country names to ISO codes
@@ -39,7 +41,7 @@ function Map() {
       }
   } , [geolocationPosition])
   return (
-    <div className={styles.mapContainer} onClick={() => navigate("form")}>
+    <div className={styles.mapContainer} >
       <Button type="position" onClick={getPosition}>{
         isLoadingPosition ? "Loading.." : "USE YOUR POSITION"
         }</Button>
@@ -85,7 +87,7 @@ function Map() {
         })}
 
         <ChangePosition position={mapPosition} />
-        <DetectClick/>
+        <DetectClick />
       </MapContainer>
 
     
@@ -100,7 +102,7 @@ function ChangePosition({ position }) {
 }
 
 function DetectClick(){
-const navigate = useNavigate();
+ const navigate = useNavigate();
 
   useMapEvents({
     
