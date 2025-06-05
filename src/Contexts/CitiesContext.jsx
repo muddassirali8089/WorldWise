@@ -17,7 +17,7 @@ function reducer(state, action) {
       return {
         ...state,
         loading: false,
-        cites: action.payload,
+        cities: action.payload, // Fixed typo from 'cites' to 'cities'
       };
 
     case "city/loaded":
@@ -31,10 +31,10 @@ function reducer(state, action) {
       return {
         ...state,
         loading: false,
-        cities: [...state.cites, action.payload],
+        cities: [...state.cities, action.payload], // Fixed typo from 'cites' to 'cities'
       };
 
-    case "cites/deleted":
+    case "city/deleted": // Changed to match the dispatch in deleteCity function
       return {
         ...state,
         loading: false,
@@ -128,21 +128,20 @@ function CitiesProvider({ children }) {
       });
     }
   }
-
-  async function deleteCity(id) {
-    dispatch({ type: "loading" });
-    try {
-      await fetch(`${BASE_URL}/cities/${id}`, {
-        method: "DELETE",
-      });
-      dispatch({ type: "city/deleted", payload: id });
-    } catch {
-      dispatch({
-        type: "rejected",
-        payload: "There was an to delete the city",
-      });
-    }
+async function deleteCity(id) {
+  dispatch({ type: "loading" });
+  try {
+    await fetch(`${BASE_URL}/cities/${id}`, {
+      method: "DELETE",
+    });
+    dispatch({ type: "city/deleted", payload: id }); // Changed to match reducer
+  } catch {
+    dispatch({
+      type: "rejected",
+      payload: "There was an error to delete a city", // Fixed error message
+    });
   }
+}
 
   return (
     <CitiesContext.Provider
