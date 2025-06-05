@@ -35,6 +35,42 @@
         "lng": "5.47119140625"
       },
       "id": 3
+    },
+    {
+      "cityName": "Ciempozuelos",
+      "country": "Spain",
+      "emogi": "ES",
+      "date": "2025-06-05T18:48:43.785Z",
+      "notes": "",
+      "position": {
+        "lat": "40.114426538084835",
+        "lng": "-3.6035156250000004"
+      },
+      "id": 4
+    },
+    {
+      "cityName": "Canada del Hoyo",
+      "country": "Spain",
+      "emogi": "ES",
+      "date": "2025-06-05T18:48:50.300Z",
+      "notes": "",
+      "position": {
+        "lat": "39.96310976258858",
+        "lng": "-1.8896484375000002"
+      },
+      "id": 5
+    },
+    {
+      "cityName": "Athara Hazari",
+      "country": "Pakistan",
+      "emogi": "PK",
+      "date": "2025-06-05T18:53:33.303Z",
+      "notes": "bad\n",
+      "position": {
+        "lat": "31.0387360748673",
+        "lng": "71.87255859375001"
+      },
+      "id": 6
     }
   ]
 }
