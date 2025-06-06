@@ -13,7 +13,7 @@ const initialState = {
 const FAKE_USER = {
   name: "Muddassir",
   email: "muddassirali@example.com",
-  password: "8089",
+  password: "0000",
   avatar: "https://i.pravatar.cc/100?u=zz",
 };
 function reducer(state, action) {
@@ -23,6 +23,7 @@ function reducer(state, action) {
         ...state,
         user: action.payload,
         isAuthenticated: true,
+        
       };
 
     case "logout":
@@ -53,7 +54,7 @@ function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={(user, isAuthenticated, Login, Logout)}>
+   <AuthContext.Provider value={{ user, isAuthenticated, Login, Logout }}>
       {children}
     </AuthContext.Provider>
   );
