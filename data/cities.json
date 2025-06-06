@@ -11,66 +11,6 @@
         "lng": "-1.1865234375000002"
       },
       "id": 1
-    },
-    {
-      "cityName": "Morales de Toro",
-      "country": "Spain",
-      "emogi": "ES",
-      "date": "2025-06-05T18:45:35.845Z",
-      "notes": "",
-      "position": {
-        "lat": "41.52692145488036",
-        "lng": "-5.273437500000001"
-      },
-      "id": 2
-    },
-    {
-      "cityName": "Calanques National Park",
-      "country": "France",
-      "emogi": "FR",
-      "date": "2025-06-05T18:45:46.869Z",
-      "notes": "",
-      "position": {
-        "lat": "43.037780863719924",
-        "lng": "5.47119140625"
-      },
-      "id": 3
-    },
-    {
-      "cityName": "Ciempozuelos",
-      "country": "Spain",
-      "emogi": "ES",
-      "date": "2025-06-05T18:48:43.785Z",
-      "notes": "",
-      "position": {
-        "lat": "40.114426538084835",
-        "lng": "-3.6035156250000004"
-      },
-      "id": 4
-    },
-    {
-      "cityName": "Canada del Hoyo",
-      "country": "Spain",
-      "emogi": "ES",
-      "date": "2025-06-05T18:48:50.300Z",
-      "notes": "",
-      "position": {
-        "lat": "39.96310976258858",
-        "lng": "-1.8896484375000002"
-      },
-      "id": 5
-    },
-    {
-      "cityName": "Athara Hazari",
-      "country": "Pakistan",
-      "emogi": "PK",
-      "date": "2025-06-05T18:53:33.303Z",
-      "notes": "bad\n",
-      "position": {
-        "lat": "31.0387360748673",
-        "lng": "71.87255859375001"
-      },
-      "id": 6
     }
   ]
 }

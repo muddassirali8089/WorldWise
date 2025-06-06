@@ -1,16 +1,26 @@
+import { useAuth } from "../Contexts/FakeAuthContext";
 import styles from "./User.module.css";
 
-const FAKE_USER = {
-  name: "Muddassir",
-  email: "muddassirali@example.com",
-  password: "8089",
-  avatar: "https://i.pravatar.cc/100?u=zz",
-};
+import { useNavigate } from "react-router-dom";
+
+// const FAKE_USER = {
+//   name: "Muddassir",
+//   email: "muddassirali@example.com",
+//   password: "8089",
+//   avatar: "https://i.pravatar.cc/100?u=zz",
+// };
 
 function User() {
-  const user = FAKE_USER;
 
-  function handleClick() {}
+  const navigate = useNavigate();
+  const {user , Logout} =  useAuth();
+
+  function handleClick() {
+    Logout();
+    navigate("/")
+
+    
+  }
 
   return (
     <div className={styles.user}>
