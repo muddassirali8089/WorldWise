@@ -1,10 +1,12 @@
 import PageNav from "../components/PageNav";
 import styles from "./Login.module.css";
 import { useState } from "react";
+
+import Button from "../components/Button.jsx"
 export default function Login() {
   // PRE-FILL FOR DEV PURPOSES
-  const [email, setEmail] = useState("jack@example.com");
-  const [password, setPassword] = useState("qwerty");
+  const [email, setEmail] = useState("muddassirali@example.com");
+  const [password, setPassword] = useState("0000");
 
   return (
     <main className={styles.login}>
@@ -31,7 +33,7 @@ export default function Login() {
         </div>
 
         <div>
-          <button className="cta">Login</button>
+          <Button type="primary">Login</Button>
         </div>
       </form>
     </main>
