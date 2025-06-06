@@ -11,6 +11,54 @@
         "lng": "-1.1865234375000002"
       },
       "id": 1
+    },
+    {
+      "cityName": "Benafarces",
+      "country": "Spain",
+      "emogi": "ES",
+      "date": "2025-06-06T20:11:22.520Z",
+      "notes": "",
+      "position": {
+        "lat": "41.60913859849857",
+        "lng": "-5.295410156250001"
+      },
+      "id": 2
+    },
+    {
+      "cityName": "Gadezai",
+      "country": "Pakistan",
+      "emogi": "PK",
+      "date": "2025-06-06T20:11:33.513Z",
+      "notes": "",
+      "position": {
+        "lat": "34.63570609476071",
+        "lng": "72.44384765625001"
+      },
+      "id": 3
+    },
+    {
+      "cityName": "Tehran",
+      "country": "Iran (Islamic Republic of)",
+      "emogi": "",
+      "date": "2025-06-06T20:11:49.036Z",
+      "notes": "",
+      "position": {
+        "lat": "35.679503125920974",
+        "lng": "51.67968750000001"
+      },
+      "id": 4
+    },
+    {
+      "cityName": "Astana",
+      "country": "Kazakhstan",
+      "emogi": "KZ",
+      "date": "2025-06-06T20:12:06.671Z",
+      "notes": "",
+      "position": {
+        "lat": "51.148537564278605",
+        "lng": "71.49902343750001"
+      },
+      "id": 5
     }
   ]
 }
