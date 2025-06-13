@@ -1,64 +1,64 @@
 {
   "cities": [
     {
-      "cityName": "Bardallur",
+      "cityName": "Esquivias",
       "country": "Spain",
       "emogi": "ES",
-      "date": "2025-06-05T18:42:35.200Z",
-      "notes": "amazing",
+      "date": "2025-06-01T07:16:24.000Z",
+      "notes": "this is an amazing trip",
       "position": {
-        "lat": "41.67471609778641",
-        "lng": "-1.1865234375000002"
+        "lat": "40.11443127974631",
+        "lng": "-3.7353515625000004"
       },
       "id": 1
     },
     {
-      "cityName": "Benafarces",
+      "cityName": "Zaragoza",
       "country": "Spain",
       "emogi": "ES",
-      "date": "2025-06-06T20:11:22.520Z",
-      "notes": "",
+      "date": "2025-06-02T07:20:47.000Z",
+      "notes": "amazing trip",
       "position": {
-        "lat": "41.60913859849857",
-        "lng": "-5.295410156250001"
-      },
-      "id": 2
-    },
-    {
-      "cityName": "Gadezai",
-      "country": "Pakistan",
-      "emogi": "PK",
-      "date": "2025-06-06T20:11:33.513Z",
-      "notes": "",
-      "position": {
-        "lat": "34.63570609476071",
-        "lng": "72.44384765625001"
+        "lat": "41.59271629211363",
+        "lng": "-0.8569335937500001"
       },
       "id": 3
     },
     {
-      "cityName": "Tehran",
-      "country": "Iran (Islamic Republic of)",
-      "emogi": "",
-      "date": "2025-06-06T20:11:49.036Z",
-      "notes": "",
+      "cityName": "Matadeon de los Oteros",
+      "country": "Spain",
+      "emogi": "ES",
+      "date": "2025-06-08T07:24:53.702Z",
+      "notes": "amazing trip",
       "position": {
-        "lat": "35.679503125920974",
-        "lng": "51.67968750000001"
-      },
-      "id": 4
-    },
-    {
-      "cityName": "Astana",
-      "country": "Kazakhstan",
-      "emogi": "KZ",
-      "date": "2025-06-06T20:12:06.671Z",
-      "notes": "",
-      "position": {
-        "lat": "51.148537564278605",
-        "lng": "71.49902343750001"
+        "lat": "42.36004244938991",
+        "lng": "-5.383300781250001"
       },
       "id": 5
+    },
+    {
+      "cityName": "Caceres",
+      "country": "Spain",
+      "emogi": "ES",
+      "date": "2025-06-03T07:29:03.000Z",
+      "notes": "good trip",
+      "position": {
+        "lat": "39.40538717338755",
+        "lng": "-6.262207031250001"
+      },
+      "id": 7
+    },
+    {
+      "cityName": "Islamabad",
+      "country": "Pakistan",
+      "emogi": "PK",
+      "date": "2025-06-08T07:29:26.559Z",
+      "notes": "nice city",
+      "position": {
+        "lat": "33.68904015876722",
+        "lng": "73.22387695312501"
+      },
+      "id": 8
     }
   ]
 }

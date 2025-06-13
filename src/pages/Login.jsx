@@ -5,15 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/FakeAuthContext.jsx";
 import Button from "../components/Button.jsx";
 
-
-
 export default function Login() {
 
   const navigate = useNavigate();
 
   // PRE-FILL FOR DEV PURPOSES
 
-  const { Login, isAuthenticated } = useAuth(); // ✅ get Login from context
+  const { Login, isAuthenticated } = useAuth(); 
   const [email, setEmail] = useState("muddassirali@example.com");
   const [password, setPassword] = useState("0000");
 

@@ -1,5 +1,5 @@
-// CitiesContext.jsx
-import { useEffect, createContext, useContext, useReducer } from "react";
+
+import { useEffect, createContext, useContext, useReducer, useCallback } from "react";
 
 const CitiesContext = createContext();
 
@@ -17,7 +17,7 @@ function reducer(state, action) {
       return {
         ...state,
         loading: false,
-        cities: action.payload, // Fixed typo from 'cites' to 'cities'
+        cities: action.payload, 
       };
 
     case "city/loaded":
@@ -31,10 +31,10 @@ function reducer(state, action) {
       return {
         ...state,
         loading: false,
-        cities: [...state.cities, action.payload], // Fixed typo from 'cites' to 'cities'
+        cities: [...state.cities, action.payload],
       };
 
-    case "city/deleted": // Changed to match the dispatch in deleteCity function
+    case "city/deleted": 
       return {
         ...state,
         loading: false,
@@ -66,7 +66,7 @@ function CitiesProvider({ children }) {
   );
   // const [cities, setCities] = useState([]);
   // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState(null); // Added error state
+  // const [error, setError] = useState(null); 
   // const [currentCity, setCurrentCity] = useState({});
 
   useEffect(() => {
@@ -89,7 +89,7 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  async function getCity(id) {
+  const getCity = useCallback(async function getCity(id) {
     if(Number(id) === currentCity.id) return
     dispatch({ type: "loading" });
     try {
@@ -105,7 +105,7 @@ function CitiesProvider({ children }) {
         payload: "There was an error to get the city",
       });
     }
-  }
+  } , [currentCity.id])
 
   async function createCity(newCity) {
     dispatch({ type: "loading" });
@@ -135,7 +135,7 @@ async function deleteCity(id) {
     await fetch(`${BASE_URL}/cities/${id}`, {
       method: "DELETE",
     });
-    dispatch({ type: "city/deleted", payload: id }); // Changed to match reducer
+    dispatch({ type: "city/deleted", payload: id }); 
   } catch {
     dispatch({
       type: "rejected",
